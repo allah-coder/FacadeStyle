@@ -1,0 +1,25 @@
+.footer {
+  display: flex;
+  padding-top: 40px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 40px;
+  justify-content: center;
+}
+
+.gap {
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.divider {
+  border: 1px dashed var(--palette-divider);
+}
+
+.link {
+  color: var(--palette-primary-main);
+}
+.link:hover {
+  text-decoration: underline;
+}

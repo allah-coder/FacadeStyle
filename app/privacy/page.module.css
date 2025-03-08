@@ -1,0 +1,55 @@
+.window {
+  padding-top: 80px;
+  position: relative;
+  margin-bottom: 80px;
+  padding-bottom: 80px;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.h1_span {
+  color: var(--palette-primary-main);
+}
+
+.overlay {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: -1;
+  position: absolute;
+  transform: scaleX(-1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: linear-gradient(
+      0deg,
+      rgba(var(--palette-background-defaultChannel) / 0.85),
+      rgba(var(--palette-background-defaultChannel) / 0.85)
+    ),
+    url(/images/background-blur.webp);
+}
+html[data-dark] .overlay {
+  background-image: linear-gradient(
+      rgba(22, 28, 36, 0.84),
+      rgba(22, 28, 36, 0.84)
+    ),
+    url(/images/background-blur.webp);
+}
+
+@media (width >= 600px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+@media (width >= 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}

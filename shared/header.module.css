@@ -1,0 +1,105 @@
+.appbar {
+  top: 0px;
+  z-index: 2;
+  position: sticky;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.toolbar {
+  height: 72px;
+  display: flex;
+}
+
+.shadow {
+  box-shadow: rgba(var(--palette-shadow) / 0.08) 0px 8px 16px 0px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  align-items: center;
+}
+
+.nav {
+  gap: 40px;
+  display: flex;
+  margin-right: 25px;
+}
+
+.link {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  align-items: center;
+  display: inline-flex;
+}
+
+.active::before {
+  width: 6px;
+  opacity: 1;
+  left: -13px;
+  height: 6px;
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  color: var(--palette-primary-main);
+  background-color: var(--palette-primary-main);
+}
+
+.disable::before {
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1),
+    scale 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.disable:hover::before {
+  width: 6px;
+  height: 6px;
+  left: -13px;
+  content: "";
+  opacity: 0.64;
+  border-radius: 50%;
+  position: absolute;
+  background-color: var(--palette-text-disabled);
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1),
+    scale 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.buttons {
+  gap: 12px;
+  display: flex;
+}
+
+.outlined {
+  padding: 5px 12px !important;
+  border: 1px solid rgba(var(--palette-grey-500Channel) / 0.32) !important;
+}
+.outlined:hover {
+  background-color: var(--palette-action-hover);
+}
+
+.contained {
+  padding: 6px 12px !important;
+  color: var(--palette-background-default) !important;
+  background-color: var(--palette-text-primary) !important;
+  box-shadow: rgba(var(--palette-shadow) / 0.16) 0px 8px 16px 0px !important;
+}
+html[data-dark] .contained:hover {
+  background-color: var(--palette-grey-400) !important;
+}
+html[data-light] .contained:hover {
+  background-color: var(--palette-grey-700) !important;
+}
+
+@media (width < 600px) {
+  .nav {
+    display: none;
+  }
+  .toolbar {
+    height: 64px;
+  }
+}
